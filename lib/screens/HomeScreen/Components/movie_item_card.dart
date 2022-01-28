@@ -18,6 +18,7 @@ class MovieItemCard extends StatelessWidget {
         MoviePoster(
           imageUrl:
               'https://image.tmdb.org/t/p/w185${moviesLis[index]['poster_path']}',
+          movieId: moviesLis[index]['id'],
         ),
         Text(
           moviesLis[index]['title'],

@@ -24,6 +24,7 @@ class SwiperMovieWidget extends StatelessWidget {
       itemHeight: height / 2.2,
       itemBuilder: (context, index) {
         return MoviePoster(
+          movieId: trendingMovieList[index]['id'],
           maxWidth: true,
           imageUrl:
               'https://image.tmdb.org/t/p/w185${trendingMovieList[index]['poster_path']}',

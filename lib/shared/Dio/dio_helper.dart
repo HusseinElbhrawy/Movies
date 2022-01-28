@@ -13,6 +13,11 @@ class DioHelper {
 
   static List trendingMovies = [];
   static List topRatedMovies = [];
+  static List movieCast = [];
+  static List similarMovies = [];
+  static String movieDescription = '';
+  static String movieName = '';
+  static double movieRate = 0.0;
   static Future getMoviesData(
       {required String url, required Map<String, dynamic> query}) async {
     return await dio.get(

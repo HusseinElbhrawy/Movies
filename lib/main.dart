@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/screens/HomeScreen/home_screen.dart';
 import 'package:movie_app/shared/Dio/dio_helper.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await DioHelper.initDio();
-
+void main() {
+  DioHelper.initDio();
   runApp(const MyApp());
 }
 

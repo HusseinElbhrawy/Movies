@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/HomeScreen/Components/network_image_with_loading.dart';
+import 'package:movie_app/screens/InfoScreen/info_screen.dart';
 import 'package:movie_app/shared/config/color.dart';
 
 class MoviePoster extends StatelessWidget {
   const MoviePoster({
     Key? key,
     required this.imageUrl,
+    required this.movieId,
     this.maxWidth = false,
   }) : super(key: key);
   final String imageUrl;
   final bool maxWidth;
+  final int movieId;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,6 +30,15 @@ class MoviePoster extends StatelessWidget {
           : InkWell(
               enableFeedback: true,
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => InfoScreen(
+                      imageUrl: imageUrl,
+                      movieId: movieId,
+                    ),
+                  ),
+                );
                 print('Tapped !');
               },
               child: NetworkImageWithLoading(
