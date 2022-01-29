@@ -41,8 +41,11 @@ class MoviePoster extends StatelessWidget {
                 );
                 print('Tapped !');
               },
-              child: NetworkImageWithLoading(
-                  maxWidth: maxWidth, imageUrl: imageUrl),
+              child: Hero(
+                tag: 'image',
+                child: NetworkImageWithLoading(
+                    maxWidth: maxWidth, imageUrl: imageUrl),
+              ),
             ),
     );
   }

@@ -28,9 +28,12 @@ class MovieImageNameRate extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.0),
             ),
-            child: NetworkImageWithLoading(
-              imageUrl: url,
-              maxWidth: false,
+            child: Hero(
+              tag: 'image',
+              child: NetworkImageWithLoading(
+                imageUrl: url,
+                maxWidth: false,
+              ),
             ),
           ),
         ),
