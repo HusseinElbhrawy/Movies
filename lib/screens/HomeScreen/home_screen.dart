@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
     List topRatedMovies = DioHelper.topRatedMovies;
 
     return Scaffold(
-      appBar: homeScreenAppBar,
+      appBar: homeScreenAppBar(context: context),
       body: !kIsTopRatedDone && !kIsTrendingDone
           ? const Center(child: CircularProgressIndicator())
           : SingleChildScrollView(
@@ -83,24 +83,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SwiperMovieWidget(
-                        width: width,
-                        height: height,
-                        trendingMovieList: trendingMovieList),
+                      width: width,
+                      height: height,
+                      trendingMovieList: trendingMovieList,
+                    ),
                   ),
                   CategoryHeadLine(
                     width: width,
                     text: 'Trending',
                   ),
                   ListOfMoviesWidget(
-                      height: height,
-                      width: width,
-                      movieList: trendingMovieList),
+                    height: height,
+                    width: width,
+                    movieList: trendingMovieList,
+                  ),
                   CategoryHeadLine(
                     width: width,
                     text: 'Top Rated',
                   ),
                   ListOfMoviesWidget(
-                      height: height, width: width, movieList: topRatedMovies),
+                    height: height,
+                    width: width,
+                    movieList: topRatedMovies,
+                  ),
                 ],
               ),
             ),

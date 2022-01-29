@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/screens/HomeScreen/Components/network_image_with_loading.dart';
 import 'package:movie_app/shared/Dio/dio_helper.dart';
 
-import '../info_screen.dart';
-
 class MovieImageNameRate extends StatelessWidget {
   const MovieImageNameRate({
     Key? key,
     required this.width,
     required this.height,
-    required this.widget,
+    required this.url,
+    this.isInfoScreen = true,
   }) : super(key: key);
 
   final double width;
   final double height;
-  final InfoScreen widget;
+  final String url;
+  final bool isInfoScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class MovieImageNameRate extends StatelessWidget {
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: NetworkImageWithLoading(
-              imageUrl: widget.imageUrl,
+              imageUrl: url,
               maxWidth: false,
             ),
           ),
@@ -48,13 +48,22 @@ class MovieImageNameRate extends StatelessWidget {
                     ),
               ),
             ),
-            Text(DioHelper.movieName),
-            Row(
-              children: [
-                const Icon(Icons.star_border_outlined),
-                Text('\t${DioHelper.movieRate.toString()}'),
-              ],
-            )
+            SizedBox(
+              width: width / 2,
+              child: Text(
+                DioHelper.movieName,
+                maxLines: 2,
+              ),
+            ),
+            Visibility(
+              visible: isInfoScreen,
+              child: Row(
+                children: [
+                  const Icon(Icons.star_border_outlined),
+                  Text('\t${DioHelper.movieRate.toString()}'),
+                ],
+              ),
+            ),
           ],
         ),
       ],

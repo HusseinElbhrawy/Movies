@@ -15,6 +15,7 @@ class DioHelper {
   static List topRatedMovies = [];
   static List movieCast = [];
   static List similarMovies = [];
+  static List searchList = [];
   static String movieDescription = '';
   static String movieName = '';
   static double movieRate = 0.0;

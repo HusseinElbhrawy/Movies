@@ -140,7 +140,7 @@ class _InfoScreenState extends State<InfoScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     MovieImageNameRate(
-                        width: width, height: height, widget: widget),
+                        width: width, height: height, url: widget.imageUrl),
                     MovieOverView(width: width),
                     MovieCrewList(
                         height: height,
