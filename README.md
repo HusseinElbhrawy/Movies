@@ -1,16 +1,24 @@
-# movie_app
+# Movies Application 
 
-A new Flutter project.
+-show trending Movies and top rated
 
-## Getting Started
+-can search for a specific movie
 
-This project is a starting point for a Flutter application.
+-show all movie details 
 
-A few resources to get you started if this is your first Flutter project:
+## Api Used
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+https://www.themoviedb.org/
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### packages Used
+-Dio 
+
+-card Swiper 
+
+-Cached Network Image
+
+## Screens
+
+
+
+![All  Screen](https://user-images.githubusercontent.com/64389727/151655723-7069fc14-4266-433d-b949-e4e4f8d89779.png)
